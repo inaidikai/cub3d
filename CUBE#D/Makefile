@@ -6,7 +6,7 @@
 #    By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 01:41:51 by inkahar           #+#    #+#              #
-#    Updated: 2025/01/10 01:59:59 by inkahar          ###   ########.fr        #
+#    Updated: 2025/01/10 09:32:57 by inkahar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,8 @@ INFILES = main.c \
 		  config_loader.c\
 		  fill.c\
 		  store.c\
-		  is_closed.c\
 		  pre_exec.c\
-		  cub3d2.c\
+		  utils.c\
 		  movement.c\
 		  exec.c
 		  

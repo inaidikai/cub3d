@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:12:54 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 02:08:50 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:43:39 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,37 +45,6 @@ int	perror_cube3d(char *str, int flag)
 	else
 		dprintf(2, "%s\n", str);
 	return (0);
-}
-
-void	ft_free_pp(void **argv)
-{
-	int	i;
-
-	i = 0;
-	if (!argv)
-		return ;
-	while (argv[i])
-	{
-		if (argv[i])
-		{
-			free(argv[i]);
-			argv[i] = NULL;
-		}
-		i++;
-	}
-	free(argv);
-}
-
-int	ft_str_len(char *s)
-{
-	unsigned int	count;
-
-	count = 0;
-	while (s[count])
-	{
-		count++;
-	}
-	return (count);
 }
 
 long long	ft_len_pp(void **argv)

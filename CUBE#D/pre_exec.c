@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 01:18:30 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 02:05:39 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:31:07 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	put_pixel(t_vars *data, int x, int y, int color)
 		*(unsigned int *)dst = color;
 	}
 }
-
-
 
 void	ft_reset_values(t_rays *self)
 {

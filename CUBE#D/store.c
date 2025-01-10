@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:36:29 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 01:18:09 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:42:04 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ void	fd_checkerr(t_vars *map, int fd)
 	}
 }
 
+static char	*freehelp(char *line, int fd)
+{
+	if (line)
+		free(line);
+	line = get_next_line(fd);
+	return (line);
+}
+
 void	store(t_vars *map, char *filename)
 {
 	char	*line;
@@ -56,15 +64,14 @@ void	store(t_vars *map, char *filename)
 	{
 		if (ft_stronlyspaces(line))
 		{
-			free(line);
-			line = get_next_line(fd);
+			line = freehelp(line, fd);
 			continue ;
 		}
 		store_helper(map, line, &map_line_count);
-		free(line);
-		line = get_next_line(fd);
+		line = freehelp(line, fd);
 	}
-	free(line);
+	if (line)
+		free(line);
 	map->map[map_line_count] = NULL;
 	close(fd);
 }

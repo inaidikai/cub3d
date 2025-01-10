@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 16:13:49 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 01:27:14 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 09:43:34 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,37 @@ int	cubcheck(char *y)
 	if (ft_strncmp(&y[len - 4], ".cub", 4) == 0)
 		return (1);
 	return (0);
+}
+
+void	ft_free_pp(void **argv)
+{
+	int	i;
+
+	i = 0;
+	if (!argv)
+		return ;
+	while (argv[i])
+	{
+		if (argv[i])
+		{
+			free(argv[i]);
+			argv[i] = NULL;
+		}
+		i++;
+	}
+	free(argv);
+}
+
+int	ft_str_len(char *s)
+{
+	unsigned int	count;
+
+	count = 0;
+	while (s[count])
+	{
+		count++;
+	}
+	return (count);
 }
 
 int	is_pace(char c)
