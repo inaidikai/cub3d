@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:36:29 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 01:59:35 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 14:42:34 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,7 @@ char	cube3d(char *filename)
 	size_map();
 	call_mlx(vars);
 	game();
-	mlx_put_image_to_window(ft_t_vars()->mlx, \
-		ft_t_vars()->win, ft_t_vars()->img, 0, 0);
+	mlx_put_image_to_window(ft_t_vars()->mlx, ft_t_vars()->win, ft_t_vars()->img, 0, 0);
 	mlx_hook(vars->win, ON_DESTROY, 0, close_game, (void *)vars);
 	mlx_hook(vars->win, ON_KEYDOWN,
 		1L << 0, read_key, (void *)vars);

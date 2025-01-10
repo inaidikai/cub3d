@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 00:15:20 by fkuruthl          #+#    #+#             */
-/*   Updated: 2025/01/10 01:36:02 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 15:01:24 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,18 @@ void	init_texture(t_vars *vars, t_texture *txt, char *element, int val)
 	if (!vars->mlx)
 		exit(perror_cube3d("mlx is not initialized", 0));
 	txt->img = mlx_xpm_file_to_image(vars->mlx,
-			element, &txt->width, &txt->height);
+										element,
+										&txt->width,
+										&txt->height);
 	if (!txt->img)
 	{
 		fprintf(stderr, "Error: Failed to load texture file '%s'\n", element);
 		exit(perror_cube3d("Failed to load texture", 0));
 	}
 	txt->addr = mlx_get_data_addr(txt->img,
-			&txt->bits_per_pixel, &txt->line_length, &txt->endian);
+									&txt->bits_per_pixel,
+									&txt->line_length,
+									&txt->endian);
 	txt->pix_y = 0;
 	txt->pix_x = 0;
 	txt->txt = val;
@@ -84,18 +88,24 @@ void	init_color(int *color, char *element)
 	int		g;
 	int		b;
 
+	temp = NULL;
 	temp = ft_split(element, ',');
-	if (*temp)
+	if (!temp || !temp[0] || !temp[1] || !temp[2])
 	{
-		r = atoi(temp[0]);
-		g = atoi(temp[1]);
-		b = atoi(temp[2]);
-		ft_free_pp((void **)temp);
-		if (r <= 255 && r >= 0 && g <= 255 && g >= 0 && b <= 255 && b >= 0)
-		{
-			*color = 65536 * r + 256 * g + b;
-			return ;
-		}
+		if (temp)
+			ft_free_pp((void **)temp);
+		exit(perror_cube3d("Invalid input: missing RGB components \
+		or space not allowed",
+							0));
 	}
-	exit (perror_cube3d ("colour invalid", 0));
+	r = atoi(temp[0]);
+	g = atoi(temp[1]);
+	b = atoi(temp[2]);
+	ft_free_pp((void **)temp);
+	if (r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255)
+	{
+		*color = 65536 * r + 256 * g + b;
+		return ;
+	}
+	exit(perror_cube3d("Invalid RGB values", 0));
 }
