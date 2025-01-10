@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 01:47:40 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 01:57:31 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 10:09:23 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,18 +110,4 @@ void	ft_right(t_vars *vars)
 			}
 		}
 	}
-}
-
-void	ft_look_left(t_vars *vars)
-{
-	if (vars->player_angle - vars->rotation < 0)
-		vars->player_angle = 360 + vars->player_angle - vars->rotation;
-	else
-		vars->player_angle -= vars->rotation;
-}
-
-void	ft_look_right(t_vars *vars)
-{
-	vars->player_angle += vars->rotation;
-	vars->player_angle %= 360;
 }

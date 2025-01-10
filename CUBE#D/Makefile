@@ -6,7 +6,7 @@
 #    By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 01:41:51 by inkahar           #+#    #+#              #
-#    Updated: 2025/01/10 09:32:57 by inkahar          ###   ########.fr        #
+#    Updated: 2025/01/10 10:12:44 by inkahar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,11 @@ INFILES = main.c \
 		  pre_exec.c\
 		  utils.c\
 		  movement.c\
-		  exec.c
+		  exec.c\
+		  exec_math.c\
+		  execsprite.c\
+		  executils.c\
+		  
 		  
 
 OBJFILES = $(INFILES:.c=.o)

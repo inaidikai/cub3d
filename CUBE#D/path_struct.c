@@ -6,7 +6,7 @@
 /*   By: inkahar <inkahar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 18:34:21 by inkahar           #+#    #+#             */
-/*   Updated: 2025/01/10 01:24:14 by inkahar          ###   ########.fr       */
+/*   Updated: 2025/01/10 10:14:26 by inkahar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	path_struct(t_vars *map)
 		exit(perror_cube3d("Map is empty", 0));
 	if (ft_array_length(map->map) < 3)
 		exit(perror_cube3d("Invalid map structure or player count", 0));
-	printf("path checker LOOOKING DONE\n");
 	return (1);
 }
